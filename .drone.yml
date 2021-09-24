@@ -12,7 +12,6 @@ name: default
 steps:
 - name: publish
   image: plugins/docker
-
   settings:
     auto_tag: true
     username: gotosocial
