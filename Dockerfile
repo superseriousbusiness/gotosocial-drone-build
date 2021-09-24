@@ -27,6 +27,5 @@ RUN apk add git
 ADD "https://github.com/go-swagger/go-swagger/releases/download/${GO_SWAGGER_VERSION}/swagger_linux_amd64" /go/bin/swagger
 RUN chmod +x /go/bin/swagger
 
-ADD entrypoint.sh entrypoint.sh
-RUN chmod +x entrypoint.sh
-ENTRYPOINT [ "./entrypoint.sh" ]
+ADD dockerlogin.sh dockerlogin.sh
+RUN chmod +x dockerlogin.sh
