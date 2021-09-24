@@ -20,6 +20,8 @@ RUN apk add docker openrc
 
 ### Install goreleaser for performing releases from inside this container
 RUN wget "https://github.com/goreleaser/goreleaser/releases/download/${GORELEASER_VERSION}/goreleaser_Linux_x86_64.tar.gz" -O - | tar -xz -C /go/bin
+# goreleaser also needs git so add that too
+RUN apk add git
 
 ### Install goswagger for building swagger definitions inside this container
 ADD "https://github.com/go-swagger/go-swagger/releases/download/${GO_SWAGGER_VERSION}/swagger_linux_amd64" /go/bin/swagger
