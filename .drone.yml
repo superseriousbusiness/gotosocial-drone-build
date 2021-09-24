@@ -37,3 +37,9 @@ trigger:
     - "*"
     include:
     - superseriousbusiness/gotosocial-drone-build
+
+---
+kind: signature
+hmac: b0895a49479b0b73f1ecad5d3a27ac94b766aab96d64697a84cd20a7168770c3
+
+...
