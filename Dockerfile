@@ -19,12 +19,12 @@ RUN npm install --global yarn
 RUN apk add docker openrc
 
 ### Install goreleaser for performing releases from inside this container
-RUN go install "github.com/goreleaser/goreleaser@${GORELEASER_VERSION}"
+RUN wget "https://github.com/goreleaser/goreleaser/releases/download/${GORELEASER_VERSION}/goreleaser_Linux_x86_64.tar.gz" -O - | tar -xz -C /go/bin
 
 ### Install goswagger for building swagger definitions inside this container
-RUN wget "https://github.com/go-swagger/go-swagger/releases/download/${GO_SWAGGER_VERSION}/swagger_linux_amd64" -O /go/bin/swagger
+ADD "https://github.com/go-swagger/go-swagger/releases/download/${GO_SWAGGER_VERSION}/swagger_linux_amd64" /go/bin/swagger
 RUN chmod +x /go/bin/swagger
 
-ADD entrypoint.sh /go/entrypoint
-WORKDIR /go
+ADD entrypoint.sh entrypoint.sh
+RUN chmod +x entrypoint.sh
 ENTRYPOINT [ "entrypoint.sh" ]
