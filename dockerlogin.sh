@@ -7,4 +7,4 @@ DOCKER_USERNAME="${DOCKER_USERNAME:-$(cat dockerusername)}"
 
 rc-update add docker boot
 
-echo "${DOCKER_PASSWORD}" | docker login -u gotosocial --password-stdin
+echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
