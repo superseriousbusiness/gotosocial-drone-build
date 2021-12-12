@@ -18,11 +18,13 @@ steps:
     password:
       from_secret: gts_docker_password
     repo: superseriousbusiness/gotosocial-drone-build
-    tags: latest
+    tags:
+    - latest 
+    - "0.0.1"
     build_args:
-    - GORELEASER_VERSION=v0.179.0
-    - GO_SWAGGER_VERSION=v0.27.0
-    - GO_CONTAINER_VERSION=1.17.1-alpine3.14
+    - GORELEASER_VERSION=v1.1.0
+    - GO_SWAGGER_VERSION=v0.28.0
+    - GO_CONTAINER_VERSION=1.17.5-alpine3.14
   when:
     event:
       include:
@@ -40,6 +42,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 66f1bace61c0c5beaa49a3bc2d148aa47d0bbf83489301cb518ba7b6b0962ee8
+hmac: c84a488d7c1b9473a589ce693591982ed0e03de11581c1ee988ab2d76bc82075
 
 ...
