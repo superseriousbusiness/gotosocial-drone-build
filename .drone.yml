@@ -22,9 +22,9 @@ steps:
     - latest 
     - "0.0.1"
     build_args:
-    - GORELEASER_VERSION=v1.1.0
+    - GORELEASER_VERSION=v1.5.0
     - GO_SWAGGER_VERSION=v0.28.0
-    - GO_CONTAINER_VERSION=1.17.5-alpine3.14
+    - GO_CONTAINER_VERSION=1.17.7-alpine3.14
   when:
     event:
       include:
@@ -42,6 +42,6 @@ trigger:
 
 ---
 kind: signature
-hmac: c84a488d7c1b9473a589ce693591982ed0e03de11581c1ee988ab2d76bc82075
+hmac: 6d7da916d43a1307f8014254fae9d6ea35ab0ad56ad7fca93c02b7c94823ae06
 
 ...
