@@ -18,6 +18,9 @@ RUN npm install --global yarn
 ### Install openrc -- for running the docker daemon inside the container
 RUN apk add docker openrc
 
+### Enable experimental features on the Docker daemon
+COPY daemon.json /etc/docker/daemon.json
+
 ### Install goreleaser for performing releases from inside this container
 RUN wget "https://github.com/goreleaser/goreleaser/releases/download/${GORELEASER_VERSION}/goreleaser_Linux_x86_64.tar.gz" -O - | tar -xz -C /go/bin
 # goreleaser also needs git so add that too
