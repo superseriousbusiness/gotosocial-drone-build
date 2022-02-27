@@ -2,8 +2,11 @@ ARG GO_CONTAINER_VERSION
 FROM golang:${GO_CONTAINER_VERSION}
 
 ARG GO_SWAGGER_VERSION
+ENV GO_SWAGGER_VERSION=${GO_SWAGGER_VERSION}
 ARG GORELEASER_VERSION
+ENV GORELEASER_VERSION=${GORELEASER_VERSION}
 ARG DOCKER_BUILDX_VERSION
+ENV DOCKER_BUILDX_VERSION=${DOCKER_BUILDX_VERSION}
 ARG APK_PACKAGES="nodejs-current \
                   npm \
                   git \
@@ -11,10 +14,6 @@ ARG APK_PACKAGES="nodejs-current \
                   ### Install openrc -- for running the docker daemon inside the container
                   docker \
                   openrc"
-
-ENV GO_SWAGGER_VERSION=${GO_SWAGGER_VERSION}
-ENV GORELEASER_VERSION=${GORELEASER_VERSION}
-ENV DOCKER_BUILDX_VERSION=${DOCKER_BUILDX_VERSION}
 
 ADD dockerlogin.sh dockerlogin.sh
 
