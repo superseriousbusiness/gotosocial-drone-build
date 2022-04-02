@@ -3,7 +3,7 @@
 set -eu
 
 # clone the repo
-git clone --mirror ${ORIGIN_REPO} .
+git clone --mirror ${ORIGIN_REPO} ./gotosocialclone && cd ./gotosocialclone
 
 # configure git credentials
 git config --global user.email "${CODEBERG_EMAIL}"
