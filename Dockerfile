@@ -16,6 +16,7 @@ ARG APK_PACKAGES="nodejs-current \
                   openrc"
 
 ADD dockerlogin.sh dockerlogin.sh
+ADD codeberg_clone.sh codeberg_clone.sh
 
 RUN apk upgrade --update && \
     ### Installs $APK_PACKAGES ###
@@ -33,6 +34,3 @@ RUN apk upgrade --update && \
     chmod +x /go/bin/swagger && \
     # Makes Docker Login Executible
     chmod +x dockerlogin.sh
-
-### Enable experimental features on the Docker daemon
-#COPY daemon.json /etc/docker/daemon.json
