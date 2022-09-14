@@ -31,6 +31,14 @@ docker build \
 
 Just fill in the version numbers in the above script and you're good to go.
 
+Alternatively, if you have `niet` installed (yaml parser for Python), just call the build script with `./build.sh`. Version numbers will be injected automatically based on what's in `.drone.yml`.
+
 ## Updating the container
 
 Bump the version numbers in `.drone.yml`, sign the file, create a new tag, and push it.
+
+Signing:
+
+```bash
+drone -t PUT_YOUR_DRONE_ADMIN_TOKEN_HERE -s https://drone.superseriousbusiness.org sign superseriousbusiness/gotosocial-drone-build --save
+```
