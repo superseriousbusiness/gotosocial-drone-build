@@ -23,7 +23,7 @@ steps:
     - "0.0.6"
     build_args:
     - GORELEASER_VERSION=v1.10.3
-    - GO_SWAGGER_VERSION=v0.29.0
+    - GO_SWAGGER_VERSION=v0.30.0
     - DOCKER_BUILDX_VERSION=v0.8.2
     - GO_CONTAINER_VERSION=1.19.1-alpine
   when:
@@ -43,6 +43,6 @@ trigger:
 
 ---
 kind: signature
-hmac: ff10fd2b0149d78cf82f067336ac753f6702c534d2f3abecb75ff0450db61644
+hmac: e6b8fe362e35b8e8bc579983ad69991a1b22ba625b7af566c095bd2d26312ae8
 
 ...
