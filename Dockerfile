@@ -7,13 +7,18 @@ ARG GORELEASER_VERSION
 ENV GORELEASER_VERSION=${GORELEASER_VERSION}
 ARG DOCKER_BUILDX_VERSION
 ENV DOCKER_BUILDX_VERSION=${DOCKER_BUILDX_VERSION}
-ARG APK_PACKAGES="nodejs-current \
-                  npm \
+ARG APK_PACKAGES="\
+                  ### Git -- for cloning the repo
                   git \
-                  ### Install docker -- for making docker files inside this container
-                  ### Install openrc -- for running the docker daemon inside the container
+                  ## NodeJS + NPM -- for bundling frontend assets (via yarn)
+                  nodejs-current \
+                  npm \
+                  ### docker -- for making docker files inside this container
                   docker \
-                  openrc"
+                  ### openrc -- for running the docker daemon inside the container
+                  openrc \
+                  ### gcompat -- for the dynamically linked goswagger binary
+                  gcompat"
 
 ADD dockerlogin.sh dockerlogin.sh
 ADD codeberg_clone.sh codeberg_clone.sh
