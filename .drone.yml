@@ -20,12 +20,12 @@ steps:
     repo: superseriousbusiness/gotosocial-drone-build
     tags:
     - latest 
-    - "0.0.7"
+    - "0.0.8"
     build_args:
     - GORELEASER_VERSION=v1.12.3
     - GO_SWAGGER_VERSION=v0.30.0
     - DOCKER_BUILDX_VERSION=v0.9.1
-    - GO_CONTAINER_VERSION=1.19.3-alpine
+    - GO_CONTAINER_VERSION=1.19.5-alpine
   when:
     event:
       include:
@@ -43,6 +43,6 @@ trigger:
 
 ---
 kind: signature
-hmac: b5ba088c01b0d329e53df5c96efe7eccfc1b432c2273a86f6bb7614e44c072b5
+hmac: 422bbe10bc8d23a94b47f95fd04974023ef3b5204f8e9cff0559abcb0984abee
 
 ...
