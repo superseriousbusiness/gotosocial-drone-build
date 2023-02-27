@@ -6,6 +6,7 @@ The built (Alpine-based) container at Docker hub tag `superseriousbusiness/gotos
 
 - [Go](https://go.dev/).
 - [GoReleaser](https://github.com/goreleaser/goreleaser).
+- [jd](https://github.com/josephburnett/jd).
 - Running Docker daemon (ie., Docker in Docker).
 - [Docker Buildx](https://github.com/docker/buildx).
 - [GoSwagger](https://github.com/go-swagger/go-swagger).
@@ -23,6 +24,7 @@ Absolutely you can!
 docker build \
     --build-arg GORELEASER_VERSION=[goreleaser version number] \
     --build-arg GO_SWAGGER_VERSION=[goswagger version number] \
+    --build-arg JD_VERSION=[jd version number] \
     --build-arg DOCKER_BUILDX_VERSION=[buildx version number] \
     --build-arg GO_CONTAINER_VERSION=[go version number] \
     -t superseriousbusiness/gotosocial-drone-build:[gotosocial-drone-build version number] \
