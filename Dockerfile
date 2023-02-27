@@ -5,6 +5,8 @@ ARG GO_SWAGGER_VERSION
 ENV GO_SWAGGER_VERSION=${GO_SWAGGER_VERSION}
 ARG GORELEASER_VERSION
 ENV GORELEASER_VERSION=${GORELEASER_VERSION}
+ARG JD_VERSION
+ENV JD_VERSION=${JD_VERSION}
 ARG DOCKER_BUILDX_VERSION
 ENV DOCKER_BUILDX_VERSION=${DOCKER_BUILDX_VERSION}
 ARG APK_PACKAGES="\
@@ -37,5 +39,9 @@ RUN apk upgrade --update && \
     wget "https://github.com/go-swagger/go-swagger/releases/download/${GO_SWAGGER_VERSION}/swagger_linux_amd64" -O /go/bin/swagger && \
     # Makes swagger executable
     chmod +x /go/bin/swagger && \
+    ### Installs jd for nicer JSON diffs
+    wget "https://github.com/josephburnett/jd/releases/download/${JD_VERSION}/jd-amd64-linux" -O /go/bin/jd && \
+    # Makes jd executable
+    chmod +x /go/bin/jd && \
     # Makes Docker Login Executible
     chmod +x dockerlogin.sh
