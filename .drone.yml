@@ -20,7 +20,7 @@ steps:
     repo: superseriousbusiness/gotosocial-drone-build
     tags:
     - latest 
-    - "0.2.0"
+    - "0.3.0"
     build_args:
     - GORELEASER_VERSION=v1.20.0
     - GO_SWAGGER_VERSION=v0.30.4
@@ -44,6 +44,6 @@ trigger:
 
 ---
 kind: signature
-hmac: f97ee5c4eacc47ee58fa516c6e8c38e2315ec62e687ab8d8a72326c3d7d775a7
+hmac: 012e2bedefe992b21afdc91d8967475d89f340135dea438c8a51f7c779e42e06
 
 ...
