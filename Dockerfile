@@ -9,9 +9,13 @@ ARG JD_VERSION
 ENV JD_VERSION=${JD_VERSION}
 ARG DOCKER_BUILDX_VERSION
 ENV DOCKER_BUILDX_VERSION=${DOCKER_BUILDX_VERSION}
+ARG MINIO_MC_VERSION
+ENV MINIO_MC_VERSION=${MINIO_MC_VERSION}
 ARG APK_PACKAGES="\
                   ### Git -- for cloning the repo
                   git \
+                  ### JQ -- for json parsing
+                  jq \
                   ## NodeJS + NPM -- for bundling frontend assets (via yarn)
                   nodejs-current \
                   npm \
@@ -24,6 +28,7 @@ ARG APK_PACKAGES="\
 
 ADD dockerlogin.sh dockerlogin.sh
 ADD codeberg_clone.sh codeberg_clone.sh
+ADD snapshot_publish.sh snapshot_publish.sh
 
 RUN apk upgrade --update && \
     ### Installs $APK_PACKAGES ###
@@ -43,5 +48,11 @@ RUN apk upgrade --update && \
     wget "https://github.com/josephburnett/jd/releases/download/${JD_VERSION}/jd-amd64-linux" -O /go/bin/jd && \
     # Makes jd executable
     chmod +x /go/bin/jd && \
+    # Install MC, minio CLI client.
+    wget "https://dl.min.io/client/mc/release/linux-amd64/mc.${MINIO_MC_VERSION}" -O /go/bin/mc && \
+    # Makes mc executable
+    chmod +x /go/bin/mc && \
     # Makes Docker Login Executible
-    chmod +x dockerlogin.sh
+    chmod +x dockerlogin.sh && \
+    # Makes snapshot publish executable
+    chmod +x snapshot_publish.sh
