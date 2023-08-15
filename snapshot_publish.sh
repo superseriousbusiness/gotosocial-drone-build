@@ -34,7 +34,7 @@ done
 # Modify checksums to use the new filenames.
 sed -i "s/_${BUILD_VERSION}//" "./dist-s3/checksums.txt"
 
-# Modify checksums to remove 
+# Modify checksums to remove source code tar.gz.
 sed -i "/gotosocial-${BUILD_VERSION}-source-code.tar.gz/d" "./dist-s3/checksums.txt"
 
 # Mirror dist folder, but only tar.gz and
