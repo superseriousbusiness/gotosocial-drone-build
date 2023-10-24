@@ -23,9 +23,8 @@ steps:
     - "0.4.0"
     build_args:
     - GORELEASER_VERSION=v1.20.0
-    - GO_SWAGGER_VERSION=v0.30.4
+    - GO_SWAGGER_VERSION=v0.30.5
     - JD_VERSION=v1.7.1
-    - MINIO_MC_VERSION=RELEASE.2023-10-14T01-57-03Z
     - DOCKER_BUILDX_VERSION=v0.11.2
     - GO_CONTAINER_VERSION=1.21.3-alpine
   when:
@@ -45,6 +44,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 5fb863dfcf78da90103a318cfd12caa659e076aaa75c47cb79cd3207038c65f3
+hmac: 160f019bfc2be302c90e2601ae7b6e8367f8f44213f7400b33abb8af0c536170
 
 ...

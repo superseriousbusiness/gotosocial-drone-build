@@ -9,8 +9,6 @@ ARG JD_VERSION
 ENV JD_VERSION=${JD_VERSION}
 ARG DOCKER_BUILDX_VERSION
 ENV DOCKER_BUILDX_VERSION=${DOCKER_BUILDX_VERSION}
-ARG MINIO_MC_VERSION
-ENV MINIO_MC_VERSION=${MINIO_MC_VERSION}
 ARG APK_PACKAGES="\
                   ### Git -- for cloning the repo
                   git \
@@ -41,7 +39,7 @@ RUN apk upgrade --update && \
     ### Installs goreleaser for performing releases from inside this container
     wget "https://github.com/goreleaser/goreleaser/releases/download/${GORELEASER_VERSION}/goreleaser_Linux_x86_64.tar.gz" -O - | tar -xz -C /go/bin && \
     ### Installs goswagger for building swagger definitions inside this container
-    wget "https://github.com/go-swagger/go-swagger/releases/download/${GO_SWAGGER_VERSION}/swagger_linux_amd64" -O /go/bin/swagger && \
+    go install "github.com/go-swagger/go-swagger/cmd/swagger@${GO_SWAGGER_VERSION}" && \
     # Makes swagger executable
     chmod +x /go/bin/swagger && \
     ### Installs jd for nicer JSON diffs
@@ -49,7 +47,7 @@ RUN apk upgrade --update && \
     # Makes jd executable
     chmod +x /go/bin/jd && \
     # Install MC, minio CLI client.
-    wget "https://dl.min.io/client/mc/release/linux-amd64/mc.${MINIO_MC_VERSION}" -O /go/bin/mc && \
+    wget "https://dl.min.io/client/mc/release/linux-amd64/mc" -O /go/bin/mc && \
     # Makes mc executable
     chmod +x /go/bin/mc && \
     # Makes Docker Login Executible
