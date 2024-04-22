@@ -22,7 +22,7 @@ steps:
     - latest 
     - "0.4.0"
     build_args:
-    - GORELEASER_VERSION=v1.20.0
+    - GORELEASER_VERSION=v1.25.1
     - GO_SWAGGER_VERSION=v0.30.5
     - JD_VERSION=v1.7.1
     - DOCKER_BUILDX_VERSION=v0.11.2
