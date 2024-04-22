@@ -26,7 +26,7 @@ steps:
     - GO_SWAGGER_VERSION=v0.30.5
     - JD_VERSION=v1.7.1
     - DOCKER_BUILDX_VERSION=v0.11.2
-    - GO_CONTAINER_VERSION=1.21.3-alpine
+    - GO_CONTAINER_VERSION=1.22.2-alpine
   when:
     event:
       include:
