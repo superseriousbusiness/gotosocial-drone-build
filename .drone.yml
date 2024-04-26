@@ -20,10 +20,11 @@ steps:
     repo: superseriousbusiness/gotosocial-drone-build
     tags:
     - latest 
-    - "0.5.0"
+    - "0.6.0"
     build_args:
     - GORELEASER_VERSION=v1.25.1
-    - GO_SWAGGER_VERSION=v0.30.5
+    # https://github.com/go-swagger/go-swagger/issues/3070
+    - GO_SWAGGER_VERSION=c46c303aaa02
     - JD_VERSION=v1.7.1
     - DOCKER_BUILDX_VERSION=v0.11.2
     - GO_CONTAINER_VERSION=1.22.2-alpine
@@ -44,6 +45,6 @@ trigger:
 
 ---
 kind: signature
-hmac: ccbca8ff551d979538a82ff3ab396b80eb4b53eb332c5ad3390bec16b4160431
+hmac: cbf60c48eb02821ff64c1cb5e332f57dc992344046dad0e1cfabe0cc83c11d90
 
 ...
