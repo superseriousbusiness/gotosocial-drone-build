@@ -9,7 +9,6 @@ The built (Alpine-based) container at Docker hub tag `superseriousbusiness/gotos
 - [jd](https://github.com/josephburnett/jd).
 - Running Docker daemon (ie., Docker in Docker).
 - [Docker Buildx](https://github.com/docker/buildx).
-- [GoSwagger](https://github.com/go-swagger/go-swagger).
 - Script for cloning from Github -> Codeberg.
 
 ## How to use this container
@@ -23,7 +22,6 @@ Absolutely you can!
 ```bash
 docker build \
     --build-arg GORELEASER_VERSION=[goreleaser version number] \
-    --build-arg GO_SWAGGER_VERSION=[goswagger version number] \
     --build-arg JD_VERSION=[jd version number] \
     --build-arg DOCKER_BUILDX_VERSION=[buildx version number] \
     --build-arg GO_CONTAINER_VERSION=[go version number] \

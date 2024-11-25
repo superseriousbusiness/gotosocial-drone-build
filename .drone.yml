@@ -19,15 +19,13 @@ steps:
       from_secret: gts_docker_password
     repo: superseriousbusiness/gotosocial-drone-build
     tags:
-    - latest 
-    - "0.6.2"
+    - latest
+    - "0.7.0"
     build_args:
     - GORELEASER_VERSION=v2.3.2
-    # https://github.com/go-swagger/go-swagger/issues/3070
-    - GO_SWAGGER_VERSION=c46c303aaa02
     - JD_VERSION=v1.7.1
-    - DOCKER_BUILDX_VERSION=v0.11.2
-    - GO_CONTAINER_VERSION=1.22.2-alpine
+    - DOCKER_BUILDX_VERSION=v0.16.2
+    - GO_CONTAINER_VERSION=1.23-alpine
   when:
     event:
       include:
@@ -45,6 +43,6 @@ trigger:
 
 ---
 kind: signature
-hmac: af6ea0a67b0d9a24a911c59b9cf43e0f3feb43ac1b47eb215a69bc4d39fc2c47
+hmac: e4b6b81c4f8453a0a80b34e513cbcdbd51951978563c98c446971cc82816d788
 
 ...
