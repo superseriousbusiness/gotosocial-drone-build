@@ -47,21 +47,17 @@ mc mirror \
     --exclude "metadata.json" \
     --exclude "*source-code.tar.gz" \
     --exclude "gotosocial_freebsd_amd64_v1/gotosocial" \
-    --exclude "gotosocial_openbsd_amd64_v1/gotosocial" \
-    --exclude "gotosocial_linux_386/gotosocial" \
+    --exclude "gotosocial_freebsd_arm64/gotosocial" \
     --exclude "gotosocial_linux_amd64_v1/gotosocial" \
-    --exclude "gotosocial_linux_arm_6/gotosocial" \
-    --exclude "gotosocial_linux_arm_6/gotosocial" \
-    --exclude "gotosocial_linux_arm_7/gotosocial" \
     --exclude "gotosocial_linux_arm64/gotosocial" \
-    --exclude "gotosocial_moderncsqlite_freebsd_amd64_v1/gotosocial" \
-    --exclude "gotosocial_moderncsqlite_openbsd_amd64_v1/gotosocial" \
-    --exclude "gotosocial_moderncsqlite_linux_386/gotosocial" \
-    --exclude "gotosocial_moderncsqlite_linux_amd64_v1/gotosocial" \
-    --exclude "gotosocial_moderncsqlite_linux_arm_6/gotosocial" \
-    --exclude "gotosocial_moderncsqlite_linux_arm_6/gotosocial" \
-    --exclude "gotosocial_moderncsqlite_linux_arm_7/gotosocial" \
-    --exclude "gotosocial_moderncsqlite_linux_arm64/gotosocial" \
+    --exclude "gotosocial_netbsd_amd64_v1/gotosocial" \
+    --exclude "gotosocial_netbsd_arm64/gotosocial" \
+    --exclude "gotosocial_nowasm_freebsd_amd64_v1/gotosocial" \
+    --exclude "gotosocial_nowasm_linux_386/gotosocial" \
+    --exclude "gotosocial_nowasm_linux_amd64_v1/gotosocial" \
+    --exclude "gotosocial_nowasm_linux_arm_6/gotosocial" \
+    --exclude "gotosocial_nowasm_linux_arm64/gotosocial" \
+    --exclude "gotosocial_nowasm_linux_arm_7/gotosocial" \
     "./dist-s3" "s3/${S3_BUCKET_NAME}/$(git rev-parse HEAD)"
 
 # Clean up.
