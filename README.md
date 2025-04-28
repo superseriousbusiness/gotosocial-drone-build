@@ -1,3 +1,7 @@
+**This repository now lives at Codeberg: https://codeberg.org/superseriousbusiness/gotosocial-woodpecker-build**
+
+**This repository is a read-only archive.**
+
 # gotosocial-drone-build
 
 Dockerized build environment for [GoToSocial](https://github.com/superseriousbusiness/gotosocial) CI.
